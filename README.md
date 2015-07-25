@@ -41,4 +41,4 @@ Whatever we'll do, it should be done in mobile-friendly way.
 
 ## Links
 
-[ovela.us/walk](http://www.ovela.us/walk/) is almost identical starting point.
+[ovela.us/walk](http://ovela.us/walk) is almost identical starting point.
