@@ -38,3 +38,7 @@ whether this should result in changing my own virtual position or not.
 1. **Anything** we can think of.
 
 Whatever we'll do, it should be done in mobile-friendly way.
+
+## Links
+
+[ovela.us/walk](http://www.ovela.us/walk/) is almost identical starting point.
