@@ -1,0 +1,36 @@
+{
+  "name": "simplico",
+  "version": "0.0.1",
+  "authors": [
+    "aTeam"
+  ],
+  "description": "Minimalistic GIS App (Mobile First)",
+  "main": "index.html",
+  "keywords": [
+    "GIS",
+    "mobile",
+    "ol3"
+  ],
+  "license": "proprietary",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors",
+    "vendor",
+    "test",
+    "tests",
+    "reports"
+  ],
+  "dependencies": {
+    "ol3": "~3.4.0",
+    "requirejs-bower": "~2.1.18",
+    "eventist": "~0.4.1"
+  },
+  "devDependencies": {
+    "closurelibrary": "*"
+  },
+  "resolutions": {
+    "eventist": "~0.4.1"
+  }
+}

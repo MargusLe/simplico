@@ -1,0 +1,54 @@
+#!/bin/bash
+echo "r.js: building modules..."
+r.js -o configs/build.txt
+
+if [ ! $? -eq 0 ]; then
+exit; fi
+
+cp vendor/requirejs-bower/require.js dist/js/require_.js
+echo "preprocessing files"
+sed -E s/src=".+require.js"/src="\"js\/require_.js"/g < dev/index.html \
+ | sed '/\/vendor\// d' > dist/index.html
+sed s/define\(/tmpDefine\(/g < dev/js/ui-map.js > dist/js/tmp-map.js
+sed s/define\(/tmpDefine\(/g < dev/js/ui-markers.js >> dist/js/tmp-mrk.js
+sed s/define\(/tmpDefine\(/g < dev/js/ui-location.js >> dist/js/tmp-loc.js
+sed s/define\(/tmpDefine\(/g < dev/js/ui_root.js >> dist/js/tmp-roo.js
+
+# cat dist/js/ui-*.js | sed s/define\(/tmpDefine\(/g > dist/js/tmp-root.js
+
+if [ ! $? -eq 0 ]; then
+exit; fi
+
+# cp dist/js/ui-map.js dist/js/ui-map.tmp.js
+
+# Compile the Javascript
+echo "GCL building ui_root.js"
+java -jar /usr/local/lib/node_modules/google-closure-compiler/compiler.jar \
+  --js dist/js/tmp-???.js \
+  --js_output_file=dist/js/tmp-root1.js \
+  --only_closure_dependencies \
+  --compilation_level=ADVANCED_OPTIMIZATIONS \
+  --closure_entry_point=app.ui.maproot --debug \
+  --js="vendor/ol3/ol/ol/**.js" --js="vendor/ol3/ol.ext/**.js" \
+  --js="dev/js/ol3-layerswitcher.js" \
+  --js="vendor/ol3/closure-library/closure/goog/**.js" \
+  --js="vendor/ol3/closure-library/third_party/**.js" \
+  --externs=configs/externs.js \
+  --js="!**_test.js" \
+  --js="vendor/ol3/ol.ext/**.js"
+
+#  WHITESPACE_ONLY SIMPLE_OPTIMIZATIONS ADVANCED_OPTIMIZATIONS
+#  --js="dist/js/ol3-layerswitcher.js"
+
+if [ ! $? -eq 0 ]; then
+exit; fi
+
+cat configs/wd-beg.txt vendor/proj4/dist/proj4.js dist/js/tmp-root1.js \
+  configs/wd-end.txt > dist/js/tmp_root2.js
+
+echo "Compressing the library..."
+r.js -o configs/press.txt
+
+rm dist/build.txt dist/js/sync.js
+rm dist/js/tmp*.* dist/js/ui-*.* dist/js/ol3-*.* dist/old.html
+rm dist/css/[^a]*.*

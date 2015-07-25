@@ -1,0 +1,3 @@
+if('undefined' !== typeof tmpDefine) throw new Error('Unexpected global variable "tmpDefine"');
+var tmpDefine = define;
+define = void 0;

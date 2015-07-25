@@ -1,0 +1,3 @@
+#!/bin/bash
+tar -c -k --exclude=".[A-Za-z]*" -f tmp_packed.tar package.json dist srv bin/srv-*
+echo "Archive 'tmp_packed.tar' is ready"

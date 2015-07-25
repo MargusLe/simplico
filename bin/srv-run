@@ -1,0 +1,2 @@
+#!/bin/bash
+node srv/srv.js --dir=dist "$@" > log.txt 2> err.txt &

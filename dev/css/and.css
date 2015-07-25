@@ -1,0 +1,117 @@
+@import url('pure.css');
+@import url('ol3-layerswitcher.css');
+
+html, body, .map {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url(res/textured_paper.jpeg) repeat
+}
+
+.zoom {
+    position: absolute;
+    top: .2em;
+    right: .5em
+}
+
+.bm-buttons {
+    position: absolute;
+    top: 50%;
+    right: .5em
+}
+
+.g-buttons {
+    position: absolute;
+    bottom: 0.2em;
+    right: 0.5em;
+    font-weight: bolder
+}
+
+.compass {
+    position: absolute;
+    bottom: 3.5em;
+    right: 0.5em;
+    font-weight: bolder
+}
+
+.pure-button {
+    display: block;
+    margin: .2em 0;
+    background-color: #7b98bc;
+    background-color: rgba(0, 60, 136, 0.5);
+    color: #fff;
+    font-weight: normal;
+    font-size: 200%;
+    padding: .01em .3em .01em .3em
+}
+
+.map-center {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(50%, -50%);
+    -ms-transform: translate(50%, -50%)
+}
+
+.crosshair {
+    display: block;
+    font-size: 200%;
+    color: #f00;
+    border: #fff;
+    background: none
+}
+
+.ol-scale-line {
+    background-color: #7b98bc;
+    background-color: rgba(0, 60, 136, 0.5)
+}
+
+.ol-scale-line-inner {
+    font-size: 1em
+}
+
+.layer-switcher {
+    top: .5em
+}
+
+.layer-switcher button {
+    float: left;
+    background-color: #7b98bc;
+    background-color: rgba(0, 60, 136, 0.5)
+}
+
+.layer-switcher .panel {
+    padding-right: 1em
+}
+
+.layer-switcher li {
+    margin: .5em 0
+}
+
+.layer-switcher li.group > label {
+    font-size: 1.2em
+}
+
+.layer-switcher ul {
+    font-size: 1.2em
+}
+
+.layer-switcher .panel footer {
+    font-weight: normal;
+    font-size:.7em;
+    text-align: center;
+}
+
+input[type=radio] {
+    margin-right: 0.4em;
+    width: 0.8em;
+    height: 0.8em
+}
+
+input[type=checkbox] {
+    margin-right: 0.4em;
+    width: 0.8em;
+    height: 0.8em
+}

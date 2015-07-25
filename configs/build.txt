@@ -1,0 +1,44 @@
+{
+  appDir:         '../dev',
+  dir:            '../dist',
+  mainConfigFile: '../dev/js/config.js',
+  optimize:       'uglify2',
+
+  findNestedDependencies:  false, // Not so necessary with modules
+  preserveLicenseComments: false,
+
+  pragmas: {
+      production: true
+  },
+
+  modules: [
+    {
+      name:    'app',
+      include: [
+          // The modules require'd on top level will be included automagicaly.
+          'sync'
+        ]
+    }
+  ],
+
+  uglify2: {
+    //See: https://github.com/mishoo/UglifyJS2
+    output:   {
+      beautify: false
+    },
+    compress: {
+      sequences:   false,
+      properties:  false,
+      dead_code:   true,
+      join_vars:   true,
+      unused:      true,
+      evaluate:    true,  // default - useful with defines
+      global_defs: {
+        PRODUCTION_BUILD: true,
+        DEBUG:            false
+      }
+    },
+    warnings: true,
+    mangle:   true
+  }
+}

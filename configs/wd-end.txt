@@ -1,0 +1,2 @@
+define = tmpDefine;
+tmpDefine = void 0;

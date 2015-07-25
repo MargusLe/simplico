@@ -1,0 +1,30 @@
+{
+  baseUrl:        '../dist/js',
+  name:           'tmp_root2',
+  out:            '../dist/js/ui_root.js',
+  optimize:       'uglify2',
+
+  findNestedDependencies:  false, // Not so necessary with modules
+  preserveLicenseComments: false,
+
+  uglify2: {
+    //See: https://github.com/mishoo/UglifyJS2
+    output:   {
+      beautify: false
+    },
+    compress: {
+      sequences:   false,
+      properties:  false,
+      dead_code:   true,
+      join_vars:   true,
+      unused:      true,
+      evaluate:    true,  // default - useful with defines
+      global_defs: {
+        PRODUCTION_BUILD: true,
+        DEBUG:            false
+      }
+    },
+    warnings: false,
+    mangle:   true
+  }
+}

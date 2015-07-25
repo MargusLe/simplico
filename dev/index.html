@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport"
+        content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <link rel="stylesheet" href="../vendor/ol3/css/ol.css" type="text/css">
+  <link rel="stylesheet" href="css/and.css">
+  <title>microMap</title>
+  <style type="text/css">
+  </style>
+</head>
+<body>
+
+<div id="map" class="map"></div>
+
+<div class="zoom">
+  <button class="pure-button" style="display:none;" id="zoom-in">+</button>
+  <button class="pure-button" style="display:none;" id="zoom-out">−</button>
+</div>
+
+<div class="map-center">
+  <button class="crosshair" style="display:none;"
+          disabled id="crosshair">+
+  </button>
+</div>
+
+<script src="../socket.io/socket.io.js"></script>
+<script src="../vendor/ol3/build/ol-debug.js"></script>
+<script data-main="js/app" src="../vendor/requirejs-bower/require.js"></script>
+</body>
+</html>
