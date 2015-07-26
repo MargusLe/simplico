@@ -1,8 +1,8 @@
 # simplico
 
-A simplistic cooperation exercise.
+A simplistic cooperation exercise
 
-## A Starting point
+## The Starting Point
 
 Every client application instance connects the coordination server
 via web socket, receives an identity (a color) and will report it's virtual
@@ -41,4 +41,4 @@ Whatever we'll do, it should be done in mobile-friendly way.
 
 ## Links
 
-[ovela.us/walk](http://ovela.us/walk) is almost identical starting point.
+[ovela.us/walk](http://ovela.us/walk) is almost identical to our *Starting Point*.
